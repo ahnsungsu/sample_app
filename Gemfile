@@ -5,6 +5,7 @@ gem 'rails', '4.1.2'
 gem 'pg', '~> 0.15.1'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sprockets', '~> 2.11.0'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.13.1'
