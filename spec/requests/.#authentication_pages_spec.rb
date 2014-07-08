@@ -1,1 +1,0 @@
-sungsu@ahn-mac.local.1066

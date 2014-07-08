@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.2'
+gem 'rails', '~> 4.1.2'
 gem 'pg', '~> 0.15.1'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sprockets', '~> 2.11.0'
-gem 'bcrypt', '~> 3.1.7'
+gem 'faker', '~> 1.4.1'
+gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.13.1'
@@ -14,7 +16,7 @@ end
 group :test do
   gem 'selenium-webdriver', '~> 2.35.1'
   gem 'capybara', '~> 2.1.0'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 4.4.1'
 end
 
 # Use sqlite3 as the database for Active Record
@@ -45,7 +47,7 @@ group :production do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
