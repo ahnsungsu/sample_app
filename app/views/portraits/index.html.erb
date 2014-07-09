@@ -1,0 +1,12 @@
+<% provide(:title, 'All portraits') %>
+<h1>All portraits</h1>
+
+<%= render 'portrait_form' %>
+
+<%= will_paginate %>
+
+<ul class="portraits">
+  <%= render @portraits %>
+</ul>
+
+<%= will_paginate %>

@@ -4,6 +4,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'minitest'
 require 'rspec/rails'
 require 'rspec/autorun'
+#require 'rubygems'
+#require 'factory_girl'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

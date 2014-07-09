@@ -131,6 +131,18 @@ describe "Authentication" do
           it { should be_on_signin_page }
         end
       end
+
+      describe "in the Portraits controller" do
+        describe "submitting to the create action" do
+          before { post portraits_path }
+          specify { response.headers['Location'].should eq signin_url }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete portrait_path(FactoryGirl.create(:portrait)) }
+          specify { response.headers['Location'].should eq signin_url }
+        end
+      end
     end
 
     describe "as wrong user" do

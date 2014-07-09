@@ -15,6 +15,7 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
+  it { should respond_to(:portraits) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -130,5 +131,23 @@ describe User do
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
+  end
+
+  describe "portrait associations" do
+    before { @user.save }
+    let!(:created_portraits) { FactoryGirl.create_list(:portrait, 5,
+                                                       :user => @user) }
+    it "should produce the correct array in any order" do
+      expect(@user.portraits.to_a.sort).to eq created_portraits.sort
+    end
+
+    it "should destroy associated portraits" do
+      portraits = @user.portraits.to_a
+      @user.destroy
+      expect(portraits).not_to be_empty
+      portraits.each do |p|
+        expect(Portrait.where(id: p.id)).to be_empty
+      end
+    end
   end
 end

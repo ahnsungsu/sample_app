@@ -9,4 +9,11 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :portrait do
+    sequence(:filename)  { |n| "children-#{n}.jpg" }
+    sequence(:thumbnail) { |n| "thumb-children-#{n}.jpg" }
+    description ""
+    user
+  end
 end
